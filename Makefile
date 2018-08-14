@@ -12,5 +12,5 @@ install:
 
 release:
 	git archive --format=tar.xz --prefix=grub-reboot-poweroff-$(VERSION)/ $(VERSION) > grub-reboot-poweroff-$(VERSION).tar.xz
-	gpg -ab grub-reboot-poweroff-$(VERSION).tar.xz
-	git notes --ref=refs/notes/signatures/tar add -C $$(git archive --format=tar --prefix=grub-reboot-poweroff-$(VERSION)/ $(VERSION) | gpg --armor --detach-sign | git hash-object -w --stdin) $(VERSION)
+	gpg --armor --detach-sign --comment grub-reboot-poweroff-$(VERSION).tar.xz grub-reboot-poweroff-$(VERSION).tar.xz
+	git notes --ref=refs/notes/signatures/tar add -C $$(git archive --format=tar --prefix=grub-reboot-poweroff-$(VERSION)/ $(VERSION) | gpg --armor --detach-sign --comment grub-reboot-poweroff-$(VERSION).tar | git hash-object -w --stdin) $(VERSION)
