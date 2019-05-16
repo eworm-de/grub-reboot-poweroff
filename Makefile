@@ -1,6 +1,6 @@
 # Makefile for grub-reboot-poweroff
 
-VERSION=0.2.0
+VERSION=0.2.1
 
 all:
 	@echo "Just run make install..."
