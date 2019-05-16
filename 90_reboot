@@ -3,7 +3,7 @@
 echo "Adding reboot option." >&2
 
 cat << EOF
-menuentry 'Reboot' --class tool {
+menuentry 'Reboot' --class tool --id reboot {
 	reboot
 }
 EOF

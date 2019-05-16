@@ -3,7 +3,7 @@
 echo "Adding poweroff option." >&2
 
 cat << EOF
-menuentry 'Poweroff' --class tool {
+menuentry 'Poweroff' --class tool --id poweroff {
 	halt
 }
 EOF
